@@ -1,0 +1,37 @@
+# Source files (not needed by consumers)
+src/
+
+# Build & tooling config
+.babelrc
+babel.config.js
+vite.config.*
+webpack.config.*
+rollup.config.*
+
+# Tests & docs (optional)
+__tests__/
+tests/
+docs/
+.storybook/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# OS / editor junk
+.DS_Store
+.vscode/
+.idea/
+
+# Env files
+.env
+.env.*
+
+# Lockfiles (npm will generate its own)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Misc
+coverage/
