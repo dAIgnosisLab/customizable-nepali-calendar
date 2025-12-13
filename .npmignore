@@ -1,14 +1,17 @@
-# Source files (not needed by consumers)
+# Ignore source files (CLI package, not a library)
 src/
 
-# Build & tooling config
+# Keep templates for CLI to copy
+!templates/
+
+# Build configs (not needed for CLI)
 .babelrc
 babel.config.js
 vite.config.*
 webpack.config.*
 rollup.config.*
 
-# Tests & docs (optional)
+# Tests & docs
 __tests__/
 tests/
 docs/
@@ -35,3 +38,4 @@ pnpm-lock.yaml
 
 # Misc
 coverage/
+dist/

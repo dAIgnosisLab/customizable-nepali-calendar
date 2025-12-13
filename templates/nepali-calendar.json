@@ -1,0 +1,13 @@
+# Nepali Calendar Configuration
+#
+# This file is created when you run: npx nepali-calendar init
+# It tells the CLI where to install calendar components in your project.
+#
+# You can manually edit these paths if needed.
+
+{
+  "$schema": "https://json.schemastore.org/base.json",
+  "componentsPath": "src/components/nepali-calendar",
+  "dataPath": "src/data/nepali-calendar",
+  "stylesPath": "src/styles"
+}

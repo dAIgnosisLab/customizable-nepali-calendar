@@ -1,12 +1,17 @@
 {
   "name": "customizable-nepali-calendar",
-  "version": "1.1.0",
-  "description": "design customizable nepali calendar",
+  "version": "2.0.0",
+  "description": "CLI tool to add customizable Nepali calendar components to your project (shadcn-style)",
   "keywords": [
     "customizable",
-    "deisgn",
+    "design",
     "calendar",
-    "npm"
+    "nepali",
+    "bikram-sambat",
+    "cli",
+    "components",
+    "react",
+    "shadcn"
   ],
   "homepage": "https://github.com/dAIgnosisLab/customizable-nepali-calendar#readme",
   "bugs": {
@@ -19,13 +24,23 @@
   "license": "ISC",
   "author": "dAIgnosisLab",
   "type": "commonjs",
-  "main": "dist/index.js",
+  "bin": {
+    "nepali-calendar": "./bin/cli.js"
+  },
   "files": [
-    "dist"
+    "bin",
+    "lib",
+    "templates"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel src --out-dir dist --extensions \".js,.jsx\" && copyfiles -u 2 \"src/styles/*.css\" dist/styles"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^11.1.0",
+    "fs-extra": "^11.2.0",
+    "ora": "^5.4.1",
+    "prompts": "^2.4.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.28.3",
@@ -33,5 +48,8 @@
     "@babel/preset-env": "^7.28.5",
     "@babel/preset-react": "^7.28.5",
     "copyfiles": "^2.4.1"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0"
   }
 }
