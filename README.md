@@ -1,6 +1,6 @@
 # Customizable Nepali Calendar
 
-A shadcn-style CLI tool to add beautiful, customizable Nepali (Bikram Sambat) calendar components to your React project.
+A CLI tool to add beautiful, customizable Nepali (Bikram Sambat) calendar components to your React project.
 
 > **Copy. Paste. Customize.** Not a component library. Not a package. Just copy the code into your project and make it yours.
 
@@ -152,7 +152,7 @@ npx nepali-calendar add calendar
 
 ## Why This Approach?
 
-Inspired by [shadcn/ui](https://ui.shadcn.com/), this isn't a traditional npm package or component library. Instead:
+This isn't a traditional npm package or component library. Instead:
 
 - ✅ **Full Control** - Code is in your project, modify anything
 - ✅ **No Vendor Lock-in** - Not dependent on package updates
