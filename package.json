@@ -1,6 +1,6 @@
 {
   "name": "customizable-nepali-calendar",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "description": "CLI tool to add customizable Nepali calendar components to your project (shadcn-style)",
   "keywords": [
     "customizable",

@@ -4,12 +4,6 @@ const prompts = require('prompts');
 const chalk = require('chalk');
 const ora = require('ora');
 
-const DEFAULT_PATHS = {
-  componentsPath: 'src/components/nepali-calendar',
-  dataPath: 'src/data/nepali-calendar',
-  stylesPath: 'src/styles',
-};
-
 async function initCommand(options = {}) {
   console.log(chalk.bold.cyan('\n🗓️  Nepali Calendar CLI\n'));
 
@@ -18,40 +12,34 @@ async function initCommand(options = {}) {
     return createConfig(options.componentsPath, options.dataPath, options.stylesPath);
   }
 
-  // Detect if TTY is available
-  const isTTY = process.stdin.isTTY;
-  
-  if (!isTTY) {
-    // Non-interactive mode - use defaults
-    console.log(chalk.dim('Non-interactive mode detected. Using default paths...\n'));
-    return createConfig(DEFAULT_PATHS.componentsPath, DEFAULT_PATHS.dataPath, DEFAULT_PATHS.stylesPath);
-  }
-
   const response = await prompts([
     {
       type: 'text',
       name: 'componentsPath',
       message: 'Where should we install the calendar components?',
-      initial: DEFAULT_PATHS.componentsPath,
+      initial: 'src/components/nepali-calendar',
     },
     {
       type: 'text',
       name: 'dataPath',
       message: 'Where should we install the calendar data?',
-      initial: DEFAULT_PATHS.dataPath,
+      initial: 'src/data/nepali-calendar',
     },
     {
       type: 'text',
       name: 'stylesPath',
       message: 'Where should we install the calendar styles?',
-      initial: DEFAULT_PATHS.stylesPath,
+      initial: 'src/styles',
     },
   ]);
 
-  // If cancelled or empty response
-  if (!response || !response.componentsPath) {
-    console.log(chalk.dim('Using default paths...\n'));
-    return createConfig(DEFAULT_PATHS.componentsPath, DEFAULT_PATHS.dataPath, DEFAULT_PATHS.stylesPath);
+  if (!response.componentsPath) {
+    console.log(chalk.dim('\nUsing default paths...\n'));
+    return createConfig(
+      'src/components/nepali-calendar',
+      'src/data/nepali-calendar',
+      'src/styles'
+    );
   }
 
   return createConfig(response.componentsPath, response.dataPath, response.stylesPath);
